@@ -1,0 +1,21 @@
+type User {
+  id: ID! @unique
+  nickname: String!
+  channels: [Channel!]!
+  statements: [Statement!]! @relation(name: "UsersStatements")
+}
+
+type Channel {
+  id: ID! @unique
+  title: String!
+  statements: [Statement!]!
+}
+
+type Statement {
+  id: ID! @unique
+  createdAt: DateTime!
+  postedBy: User @relation(name: "UsersStatements")
+  userId: ID!
+  channelId: ID!
+  text: String!
+}

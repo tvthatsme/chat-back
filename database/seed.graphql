@@ -1,0 +1,13 @@
+mutation {
+  first: createChannel(data: {
+    title: "Boston Celtics"
+  }) {
+    id
+  }
+
+  second: createChannel(data: {
+    title: "Atlanta Hawks"
+  }) {
+    id
+  }
+}
